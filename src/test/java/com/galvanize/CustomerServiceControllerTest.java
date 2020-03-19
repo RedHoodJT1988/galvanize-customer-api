@@ -46,4 +46,10 @@ public class CustomerServiceControllerTest {
         assertTrue(customerService.isPresent());
         assertNotNull(customerService.get().getRequestNumber());
     }
+
+    @Test
+    @Transactional
+    void createNewCustomerService() {
+        CustomerService customerService = new CustomerService(2L, "Wanda Blake", "334 Westchester Rd. New York, NY 10103", "1234567890", "Tv is broken, please come fix");
+    }
 }
