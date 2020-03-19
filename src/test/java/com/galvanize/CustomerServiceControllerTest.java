@@ -51,5 +51,7 @@ public class CustomerServiceControllerTest {
     @Transactional
     void createNewCustomerService() {
         CustomerService customerService = new CustomerService(2L, "Wanda Blake", "334 Westchester Rd. New York, NY 10103", "1234567890", "Tv is broken, please come fix");
+        customerServiceDao.save(customerService);
+        assertNotNull(customerService.getRequestNumber());
     }
 }
