@@ -21,7 +21,7 @@ public class CustomerServiceController {
     }
 
     // POST
-    @PostMapping("/customers")
+    @PostMapping("/api/service")
     CustomerService newCustomer(@RequestBody CustomerService newCustomerService) {
         return customerServiceDao.save(newCustomerService);
     }

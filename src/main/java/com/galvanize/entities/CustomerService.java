@@ -16,21 +16,21 @@ public class CustomerService {
     @Column
     String technician;
     @Column
-    int phoneNumber;
+    String phoneNumber;
     @Column
     String description;
 
     public CustomerService() {
     }
 
-    public CustomerService(String customerName, String customerAddress, int phoneNumber, String description) {
+    public CustomerService(String customerName, String customerAddress, String phoneNumber, String description) {
         this.customerName = customerName;
         this.customerAddress = customerAddress;
         this.phoneNumber = phoneNumber;
         this.description = description;
     }
 
-    public CustomerService(Long requestNumber, String customerName, String customerAddress, int phoneNumber, String description) {
+    public CustomerService(Long requestNumber, String customerName, String customerAddress, String phoneNumber, String description) {
         this.requestNumber = requestNumber;
         this.customerName = customerName;
         this.customerAddress = customerAddress;
@@ -62,11 +62,11 @@ public class CustomerService {
         this.customerAddress = customerAddress;
     }
 
-    public int getPhoneNumber() {
+    public String getPhoneNumber() {
         return phoneNumber;
     }
 
-    public void setPhoneNumber(int phoneNumber) {
+    public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
 
