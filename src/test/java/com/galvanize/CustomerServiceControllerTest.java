@@ -24,4 +24,11 @@ public class CustomerServiceControllerTest {
         Long count = customerServiceDao.count();
         assertEquals(2L, count);
     }
+
+    @Test
+    @Transactional
+    void findAllServices() {
+        List<CustomerService> customerServices = customerServiceDao.findAll();
+        assertFalse(customerServices.isEmpty());
+    }
 }
