@@ -31,4 +31,19 @@ public class CustomerServiceControllerTest {
         List<CustomerService> customerServices = customerServiceDao.findAll();
         assertFalse(customerServices.isEmpty());
     }
+
+    @Test
+    @Transactional
+    void existsById() {
+        boolean exists = customerServiceDao.existsById(5L);
+        assertTrue(exists);
+    }
+
+    @Test
+    @Transactional
+    void findServiceById() {
+        Optional<CustomerService> customerService = customerServiceDao.findById(6L);
+        assertTrue(customerService.isPresent());
+        assertNotNull(customerService.get().getRequestNumber());
+    }
 }
