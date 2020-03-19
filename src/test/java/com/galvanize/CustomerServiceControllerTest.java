@@ -54,4 +54,13 @@ public class CustomerServiceControllerTest {
         customerServiceDao.save(customerService);
         assertNotNull(customerService.getRequestNumber());
     }
+
+    @Test
+    @Transactional
+    void deleteCustomerService() {
+        CustomerService customerService = new CustomerService(2L, "Wanda Blake", "334 Westchester Rd. New York, NY 10103","1234567890", "Tv is broken, please come fix");
+        customerService = customerServiceDao.save(customerService);
+        long requestNumber = customerService.getRequestNumber();
+        assertNotNull(requestNumber);
+    }
 }
